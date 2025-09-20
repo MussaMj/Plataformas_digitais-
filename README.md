@@ -1,119 +1,106 @@
-# Project Background
-Backround about the company, including the industry, active years, business model, and key business metrics. Explain this from the POV of a data analyst who is working at the company.
+# Contexto do Projeto
+Este projeto analisa campanhas de marketing digital em várias plataformas, incluindo Facebook, Instagram, YouTube, Google e LinkedIn. O foco é compreender quais plataformas, tipos de conteúdo e segmentos de público geram os melhores resultados, usando dados históricos das campanhas.  
 
-Insights and recommendations are provided on the following key areas:
+Do ponto de vista de um **analista de dados**, este projeto aborda desde a limpeza e exploração do dataset até a aplicação de algoritmos de classificação, gerando insights úteis para tomada de decisão em estratégias de marketing.
 
-- **Category 1:** 
-- **Category 2:** 
-- **Category 3:** 
-- **Category 4:** 
+Os insights e recomendações são fornecidos nas seguintes áreas-chave:
 
-The SQL queries used to inspect and clean the data for this analysis can be found here [link].
+- **Categoria 1:** Desempenho Geral por Plataforma  
+- **Categoria 2:** Custo vs Retorno por Plataforma  
+- **Categoria 3:** Impacto das Variáveis Demográficas (Idade, Género, Região)  
+- **Categoria 4:** Performance por Tipo de Conteúdo  
+- **Categoria 5:** Eficiência do Orçamento  
 
-Targed SQL queries regarding various business questions can be found here [link].
-
-An interactive Tableau dashboard used to report and explore sales trends can be found here [link].
-
-
-
-# Data Structure & Initial Checks
-
-The companies main database structure as seen below consists of four tables: table1, table2, table3, table4, with a total row count of X records. A description of each table is as follows:
-- **Table 2:**
-- **Table 3:**
-- **Table 4:**
-- **Table 5:**
-
-[Entity Relationship Diagram here]
+As queries SQL utilizadas para inspeção e limpeza de dados podem ser consultadas aqui [link].  
+As queries SQL direcionadas a questões específicas de negócio podem ser encontradas aqui [link].  
+Um dashboard interativo em Tableau usado para reportar e explorar tendências de campanhas pode ser consultado aqui [link].  
 
 
+# Estrutura de Dados 
+O dataset principal deste projeto está armazenado em um arquivo **CSV** (`cleanedData.csv`) com **1000 linhas** e **14 colunas**.
 
-# Executive Summary
+As principais variáveis presentes no dataset são:
 
-### Overview of Findings
-
-Explain the overarching findings, trends, and themes in 2-3 sentences here. This section should address the question: "If a stakeholder were to take away 3 main insights from your project, what are the most important things they should know?" You can put yourself in the shoes of a specific stakeholder - for example, a marketing manager or finance director - to think creatively about this section.
-
-[Visualization, including a graph of overall trends or snapshot of a dashboard]
-
-
-
-# Insights Deep Dive
-### Category 1:
-
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 1]
+- **Platform** → Plataforma de campanha (YouTube, Facebook, Instagram, etc.)  
+- **Budget** → Orçamento investido na campanha  
+- **Clicks** → Número de cliques obtidos  
+- **Conversions** → Número de conversões registradas  
+- **CTR (Click-Through Rate)** → Taxa de cliques em relação às impressões  
+- **CPC (Cost per Click)** → Custo médio por clique  
+- **Conversion_Rate** → Taxa de conversão (%)  
+- **Duration** → Duração da campanha em dias  
+- **Content_Type** → Tipo de conteúdo utilizado (imagem, vídeo, etc.)
 
 
-### Category 2:
+# Resumo Executivo
 
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 2]
+### Principais Descobertas
+- **YouTube** apresenta o melhor desempenho geral, combinando altas taxas de conversão com o maior número de campanhas bem-sucedidas.  
+- **Facebook** lidera em engajamento (CTR) e oferece forte eficiência de custo por cliente.  
+- **Google** e **Facebook** são as plataformas mais eficientes em termos de custo por conversão.  
 
 
-### Category 3:
+# Detalhes dos Insights
 
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 3]
+### Categoria 1: Desempenho Geral por Plataforma
+- **YouTube**: Maior taxa de conversão (38,64%) e maior número de campanhas bem-sucedidas (199).  
+- **Facebook**: Maior CTR (499,20), CPC competitivo ($1,98), bom número de campanhas bem-sucedidas (177).  
+- **LinkedIn**: Boa taxa de conversão (31,44%) e número de campanhas bem-sucedidas (188), eficaz para B2B.  
 
 
-### Category 4:
-
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 4]
+### Categoria 2: Custo vs Retorno por Plataforma
+- **Facebook**: Menor custo por cliente ($37,45), eficiente para ROI.  
+- **Google**: Segundo melhor custo por cliente ($41,60).  
+- **YouTube**: Maior custo por cliente ($176,97), apesar da excelente taxa de conversão.  
 
 
-
-# Recommendations:
-
-Based on the insights and findings above, we would recommend the [stakeholder team] to consider the following: 
-
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
+### Categoria 3: Impacto das Variáveis Demográficas
+- **Instagram**: Melhor desempenho com o público de 18–24 anos.  
+- **LinkedIn**: Mais eficaz para profissionais 55+.  
+- **YouTube**: Desempenho elevado em ambos os géneros e várias faixas etárias.  
+- **Google & Facebook**: Forte performance com públicos mais jovens e mais velhos, respetivamente.  
 
 
-# Assumptions and Caveats:
+### Categoria 4: Performance por Tipo de Conteúdo
+- **Story**: Melhor CTR (476,39) e conversão (34,40%).  
+- **Text**: Alta conversão (33,29%), bom desempenho relativo ao custo.  
+- **Carousel & Video**: Atrai cliques, mas converte menos eficientemente.  
+ 
 
-Throughout the analysis, multiple assumptions were made to manage challenges with the data. These assumptions and caveats are noted below:
+### Categoria 5: Eficiência do Orçamento
+**Métrica:** Conversions_per_Budget (conversões por unidade de orçamento investida)  
 
-* Assumption 1 (ex: missing country records were for customers based in the US, and were re-coded to be US citizens)
-  
-* Assumption 1 (ex: data for December 2021 was missing - this was imputed using a combination of historical trends and December 2020 data)
-  
-* Assumption 1 (ex: because 3% of the refund date column contained non-sensical dates, these were excluded from the analysis)
+**Ranking de Eficiência:**
+- **Google**: 0,106248 → Mais eficiente, maior ROI  
+- **Facebook**: 0,104358 → Muito próximo do Google, excelente custo-benefício  
+- **LinkedIn**: 0,103175 → Ligeiramente menos eficiente, bom para B2B  
+- **YouTube**: 0,100407 → Altas conversões, mas mais caro por cliente  
+- **Instagram**: 0,091653 → Menos eficiente, justificável para segmento 18–24 anos  
+
+**Insights Estratégicos:**
+- **Google** → Melhor custo-benefício, ideal para orçamentos limitados ou ROI elevado  
+- **Facebook** → Alta eficiência, bom equilíbrio entre alcance e custo  
+- **LinkedIn** → Eficiente para campanhas B2B especializadas  
+- **YouTube** → Altas conversões absolutas, mas caro por cliente  
+
+# Recomendações Estratégicas para Negócios
+
+## 1. Prioridade de Plataformas
+- Priorizar **YouTube, Facebook e Google** conforme os objetivos da campanha:  
+  - **Conversão / Vendas:** YouTube e Facebook — geram mais leads e clientes reais  
+  - **Engajamento / Visibilidade da marca:** YouTube e Facebook — excelente alcance e interação  
+  - **ROI / Eficiência de custo:** Google e Facebook — campanhas mais econômicas para cada unidade investida  
+- **YouTube e Instagram**: usar estrategicamente, apenas quando o público justificar o custo adicional
+
+## 2. Tipo de Conteúdo
+- Adaptar o conteúdo ao público e objetivo do negócio:  
+  - **Story / Text:** melhores para conversão e geração de leads  
+  - **Carousel:** ideal para campanhas de awareness e engajamento
+
+## 3. Segmentação Demográfica
+- Segmentar campanhas por **idade, género e região** para otimizar desempenho e retorno por público-alvo
+
+## 4. Gestão de Orçamento e ROI
+- Monitorizar **custo por conversão** para alocar orçamento de forma eficiente  
+- Priorizar **Google e Facebook** para maximizar ROI em orçamentos limitados  
+- YouTube: investir quando o valor do cliente justificar o custo mais elevado

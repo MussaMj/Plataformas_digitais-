@@ -14,7 +14,7 @@ Os insights e recomendações são fornecidos nas seguintes áreas-chave:
 ## Notebooks
 
 - O notebook utilizado para **inspeção e limpeza de dados**, bem como para análise direcionada a questões específicas de negócio, pode ser encontrado [aqui](https://github.com/MussaMj/Plataformas_digitais-/blob/main/notebooks/AnaliseD.ipynb).  
-- O notebook criado para o **modelo de Machine Learning** está disponível [aqui](link). 
+- O notebook criado para o **modelo de Machine Learning** está disponível [aqui](https://github.com/MussaMj/Plataformas_digitais-/blob/main/notebooks/MachineL.ipynb). 
 
 
 # Estrutura de Dados 

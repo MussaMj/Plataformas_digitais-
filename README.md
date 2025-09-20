@@ -11,9 +11,10 @@ Os insights e recomendações são fornecidos nas seguintes áreas-chave:
 - **Categoria 4:** Performance por Tipo de Conteúdo  
 - **Categoria 5:** Eficiência do Orçamento  
 
-As queries SQL utilizadas para inspeção e limpeza de dados podem ser consultadas aqui [link].  
-As queries SQL direcionadas a questões específicas de negócio podem ser encontradas aqui [link].  
-Um dashboard interativo em Tableau usado para reportar e explorar tendências de campanhas pode ser consultado aqui [link].  
+## Notebooks
+
+- O notebook utilizado para **inspeção e limpeza de dados**, bem como para análise direcionada a questões específicas de negócio, pode ser encontrado [aqui](link).  
+- O notebook criado para o **modelo de Machine Learning** está disponível [aqui](link). 
 
 
 # Estrutura de Dados 
@@ -37,8 +38,8 @@ As principais variáveis presentes no dataset são:
 ### Principais Descobertas
 - **YouTube** apresenta o melhor desempenho geral, combinando altas taxas de conversão com o maior número de campanhas bem-sucedidas.  
 - **Facebook** lidera em engajamento (CTR) e oferece forte eficiência de custo por cliente.  
-- **Google** e **Facebook** são as plataformas mais eficientes em termos de custo por conversão.  
-
+- **Google** e **Facebook** são as plataformas mais eficientes em termos de custo por conversão.
+  
 
 # Detalhes dos Insights
 
@@ -47,12 +48,10 @@ As principais variáveis presentes no dataset são:
 - **Facebook**: Maior CTR (499,20), CPC competitivo ($1,98), bom número de campanhas bem-sucedidas (177).  
 - **LinkedIn**: Boa taxa de conversão (31,44%) e número de campanhas bem-sucedidas (188), eficaz para B2B.  
 
-
 ### Categoria 2: Custo vs Retorno por Plataforma
 - **Facebook**: Menor custo por cliente ($37,45), eficiente para ROI.  
 - **Google**: Segundo melhor custo por cliente ($41,60).  
 - **YouTube**: Maior custo por cliente ($176,97), apesar da excelente taxa de conversão.  
-
 
 ### Categoria 3: Impacto das Variáveis Demográficas
 - **Instagram**: Melhor desempenho com o público de 18–24 anos.  
@@ -60,12 +59,10 @@ As principais variáveis presentes no dataset são:
 - **YouTube**: Desempenho elevado em ambos os géneros e várias faixas etárias.  
 - **Google & Facebook**: Forte performance com públicos mais jovens e mais velhos, respetivamente.  
 
-
 ### Categoria 4: Performance por Tipo de Conteúdo
 - **Story**: Melhor CTR (476,39) e conversão (34,40%).  
 - **Text**: Alta conversão (33,29%), bom desempenho relativo ao custo.  
 - **Carousel & Video**: Atrai cliques, mas converte menos eficientemente.  
- 
 
 ### Categoria 5: Eficiência do Orçamento
 **Métrica:** Conversions_per_Budget (conversões por unidade de orçamento investida)  
@@ -81,16 +78,51 @@ As principais variáveis presentes no dataset são:
 - **Google** → Melhor custo-benefício, ideal para orçamentos limitados ou ROI elevado  
 - **Facebook** → Alta eficiência, bom equilíbrio entre alcance e custo  
 - **LinkedIn** → Eficiente para campanhas B2B especializadas  
-- **YouTube** → Altas conversões absolutas, mas caro por cliente  
+- **YouTube** → Altas conversões absolutas, mas caro por cliente
+
+
+# Machine Learning: Previsão de Plataforma
+
+### Objetivo
+Prever a **plataforma mais indicada** para uma campanha com base em métricas históricas e características da campanha.
+
+### Abordagem
+- **Features (`X`)**: todas as colunas relevantes exceto `Platform`  
+- **Target (`y`)**: coluna `Platform`  
+- **Pré-processamento:** one-hot encoding para variáveis categóricas e StandardScaler para variáveis numéricas  
+- **Divisão treino/teste:** 80% treino / 20% teste  
+
+### Modelo
+- Classificador: `RandomForestClassifier`  
+- Parâmetros padrão, `random_state=42` para reprodutibilidade  
+
+### Resultados
+- **Acurácia:** (colocar valor obtido)  
+- **Matriz de Confusão** e **Relatório de Classificação** indicam bom desempenho na previsão de plataformas  
+- **Previsão Principal:** **YouTube** se destaca como a melhor plataforma, reforçando os insights da análise de dados
+
+### Insights de Feature Importance
+- Métricas mais relevantes para prever a plataforma  
+- Permite priorizar recursos e métricas nas campanhas futuras  
+
+### Visualizações
+- Gráfico das top features mais importantes  
+- Comparação entre valores reais e previstos 
+
 
 # Recomendações Estratégicas para Negócios
 
 ## 1. Prioridade de Plataformas
+
 - Priorizar **YouTube, Facebook e Google** conforme os objetivos da campanha:  
-  - **Conversão / Vendas:** YouTube e Facebook — geram mais leads e clientes reais  
-  - **Engajamento / Visibilidade da marca:** YouTube e Facebook — excelente alcance e interação  
-  - **ROI / Eficiência de custo:** Google e Facebook — campanhas mais econômicas para cada unidade investida  
-- **YouTube e Instagram**: usar estrategicamente, apenas quando o público justificar o custo adicional
+  - **Conversão / Vendas:** YouTube e Facebook — geram mais leads e clientes reais.  
+  - **Engajamento / Visibilidade da marca:** YouTube e Facebook — excelente alcance e interação.  
+  - **ROI / Eficiência de custo:** Google e Facebook — campanhas mais econômicas por unidade investida.  
+
+- **YouTube e Instagram:** usar estrategicamente, apenas quando o público justificar o custo adicional.  
+
+- **Observação de negócio:** YouTube é indicado como a plataforma mais eficaz, tanto pela análise de dados quanto pelo modelo preditivo.
+
 
 ## 2. Tipo de Conteúdo
 - Adaptar o conteúdo ao público e objetivo do negócio:  
